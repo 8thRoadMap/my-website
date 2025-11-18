@@ -40,14 +40,20 @@
 	
     <p>We value your thoughts! Please share your feedback and rate your experience with the Research Nexus website.</p>
 
-   <form class="feedback-form" action="https://formsubmit.co/throadmap@gmail.com" method="POST">
+  <form action="https://api.staticforms.xyz/submit" method="POST" class="feedback-form">
+	  
+    <input type="hidden" name="accessKey" value="sf_gk04hkble0cebf13dj7g4aig">
 
-        <label for="name">Name (optional):</label>
-        <input type="text" id="name" placeholder="Enter your name">
+    <input type="hidden" name="redirectTo" value="https://yourwebsite.github.io/thankyou.html">
 
-        <label for="email">Email (optional):</label>
-        <input type="email" id="email" placeholder="Enter your email">
+    <label>Name:</label>
+    <input type="text" name="name" required>
 
+    <label>Email (optional):</label>
+    <input type="email" name="email">
+
+    <button type="submit">Submit Feedback</button>
+</form>
 		
         <div class="rating-scale">
 			<label for="rating">Rate Your Experience (1 to 10):</label>
@@ -97,4 +103,5 @@
 </body>
 
 </html>
+
 
