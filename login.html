@@ -29,7 +29,7 @@ document.getElementById("loginForm").addEventListener("submit", function(e){
     const user = document.getElementById("username").value;
     const pass = document.getElementById("password").value;
 
-    if(user === "admin" && pass === "SirFajel") {
+    if(user === "admin" && pass === "12345") {
         localStorage.setItem("loggedIn", "true");
         alert("Logged in successfully!");
         window.location.href = "index.html";
@@ -42,4 +42,5 @@ document.getElementById("loginForm").addEventListener("submit", function(e){
 </body>
 
 </html>
+
 
