@@ -7,42 +7,95 @@ body {
 
 h1, h2, h3 {
     margin: 0 0 15px;
+	text-align: center;
 }
 
-header { 
-    background: #004aad;
+header {
+    background-image: linear-gradient(to top,  #007cbe, #fff7ae);
+    padding: 0px 30px 0px 30px;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
 }
 
-header nav a {
+.logo {	
+	margin-top: -35px;
+	margin-left: 15px;
+}
+
+.hamburger {
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+header a {
+	text-decoration: none;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    background: #007cbe;
     color: white;
-    margin-left: 20px;
-    text-decoration: none;
-    font-weight: bold;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
 }
 
-header nav a:hover {
-    text-decoration: underline;
+.side-menu.open {
+    left: 0; 
+}
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 26px;
+    cursor: pointer;
+}
+.side-menu a {
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.side-menu a:hover {
+    background: rgba(255,255,255,0.2);
 }
 
 .hero {
-    background: linear-gradient(to right, #4caf50, #2196f3);
+    background-image: url(RESEARCH.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center; 
     color: white;
     padding: 80px 30px;
+	height: 190px;
     text-align: center;
+}
+.hero h1{
+	font-family: "Brush Script MT", cursive;
+	font-size: 80px;
+}
+.hero p {
+	font-size: 24px;
 }
 
 .section {
     padding: 40px 30px;
-    background: white;
-    margin: 20px;
     border-radius: 10px;
 }
-
+.content {
+    background-image: linear-gradient(to right,  #007cbe, #fff7ae);
+	margin-top: -20px;	
+	padding: 20px;
+}
 .feedback-form {
     display: flex;
     flex-direction: column;
@@ -98,10 +151,10 @@ footer {
     padding: 15px;
     background: #333;
     color: white;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 .login-button {
-    padding: 8px 15px;
+    padding: 5px 10px;
     background: white;
     color: #004aad;
     border-radius: 6px;
@@ -110,4 +163,32 @@ footer {
 
 .login-button:hover {
     background: #e3e3e3;
+}
+#synthesis {
+	text-align: justify;
+	text-indent: 30px;
+}
+.section p {
+	font-family: Times New Roman;
+}
+#about h2	 {
+	font-family: "Brush Script MT", cursive;
+}
+#ttsBtn {
+    background: #0066ff;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#ttsBtn:hover {
+    opacity: 0.85;
+}
+#btn {
+	margin: 15px;
+	text-align: center;
 }
