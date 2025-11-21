@@ -4,80 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> 8th Road Map </title>
+	<link rel="icon" type="image/x-icon" href="8th Road Logo.jpg">
     <link rel="stylesheet" type="text/css" href="style.css">
+	<style>
+	.content .widget img {
+	height: 400px;
+	width: 400px;
+	transition: transform 0.5s ease;
+	border-radius: 10px;
+}	
+	#widget {
+	display: flex;
+	margin: 60px 200px 60px 200px;
+	justify-content: space-around;
+}
+	.widget a img:hover {
+	transform: scale(1.05) translateY(-5px);
+	border-radius: 10px;
+}	
+	</style>
 </head>
 <body>
 
-    <header>
-        <div class="logo"> 8th Road Map</div>
-        <nav>
-            <a href="#">Synthesis</a>
-            <a href="#">Presenters</a>
-            <a href="#t">About us</a>
-			<a href="#feedback-form">Feedback</a>
-			<a id="loginBtn" href="login.html" class="login-button">Login</a>
-        </nav>
+     <header>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            =
+      	  </div>
+		  
+		<a id="loginBtn" href="login.html" class="login-button">Login</a>
     </header>
+
+    <nav id="sideMenu" class="side-menu">
+        <div class="logo"><img src="logo.png" style="height: 60px; width: 60px;"></div>
+        <div class="close-btn" onclick="toggleMenu()">x</div>
+
+        <a href="index.html">Home</a>
+        <a href="synthesis.html">Synthesis</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="feedback.html">Feedback</a>
+    </nav>
 
 
     <section class="hero">
-        <h1> Research Congress Synthesis</h1>
+        <h1> 8th Road Map</h1>
         <p>Advancing Urban Development through Research: Establishing Innovative Solutions for Sustainable Cities</p>
     </section>
-
-
-    <section id="about" class="section">
-        <h2>About the Website</h2>
-        <p>
-            This website aims synthesize the presentations during the Research Congress. Each study highlights innovative approaches, solutions, 
-			and insights connected to a Sustainable Development Goal.
-        </p>
-    </section>
 	
-	<section id="feedback" class="section">
+	<section class="content">
+
+	<div id="btn">
+	<button id="ttsBtn"> Speak </button>
+	</div>
+
+
+	<section class="content" id="widget">
 	
-    <h2>Feedback Form</h2>
+	<div class="widget">
+	<a href="#"><img src="dino.jpg"></a>
+	</div>
 	
-    <p>We value your thoughts! Please share your feedback and rate your experience with the Research Nexus website.</p>
-
-  <form action="https://sf_gk04hkble0cebf13dj7g4aig.staticforms.xyz/submit" method="POST" class="feedback-form">
-	  
-    <input type="hidden" name="accessKey" value="sf_gk04hkble0cebf13dj7g4aig">
-
-    <input type="hidden" name="redirectTo" value="https://8throadmap.github.io/my-website/">
-
-    <label>Name (optional)</label>
-    <input type="text" name="name">
-
-    <label>Email (optional):</label>
-    <input type="email" name="email">
-
-		
-        <div class="rating-scale">
-			<label for="rating">Rate Your Experience (1 to 10):</label>
-			<select id="rating" class="rating-dropdown">
-				<option value="" disabled selected>Select a rating</option>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
-			</select>
-        </div>
-		
-
-        <label for="message">Your Feedback:</label>
-        <textarea id="message" rows="5" placeholder="Write your comments here..." required></textarea>
-
-	    <button type="submit">Submit Feedback</button>
-	  
-    </form>
+	<div class="widget">
+	<a href="#"><img src="dino.jpg"></a>
+	</div>
 	</section>
+	
+	<section class="content" id="widget">
+	<div class="widget">
+	<a href="#"><img src="dino.jpg"></a>
+	</div>
+	
+	<div class="widget">
+	<a href="#"><img src="dino.jpg"></a>
+	</div>
+	
+	</section>
+	
+	</section>
+	
+	
+	
+	
+	
+	
 	
     <footer>
         <p> © 2025 8th Road Map | Draft Website</p>
@@ -96,13 +105,31 @@
             location.reload();
         });
     }
+	
+		const ttsBtn = document.getElementById("tts-btn");
+	const ttsText = document.getElementById("tts-text");
+
+	let speaking = false;
+	let utterance;
+
+	ttsBtn.addEventListener("click", () => {
+		if (!speaking) {
+			utterance = new SpeechSynthesisUtterance(ttsText.innerText || ttsText.value);
+			speechSynthesis.speak(utterance);
+			speaking = true;
+			ttsBtn.innerText = "Stop";
+		} else {
+			speechSynthesis.cancel();
+			speaking = false;
+			ttsBtn.innerText = "Speak";
+    }
+});
+
+ function toggleMenu() {
+            const menu = document.getElementById("sideMenu");
+            menu.classList.toggle("open");
+        }
 	</script>
 
 </body>
-
 </html>
-
-
-
-
-
